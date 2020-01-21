@@ -1,6 +1,34 @@
 # Git
 
-##本地仓库
+## 本地仓库
+
+mkdir + 文件名；新建一个文件夹
+
+cd + 文件名；打开一个文件夹
+
+pwd 显示当前目录
+
+git init 创建git仓库
+
+添加文件到git仓库：
+
+git add file;//添加文件到暂存区；
+
+ git commit -m "message”;
+
+时刻掌握仓库当前状态： git status 
+
+查看上次修改的内容 ：git diff;//difference
+
+查看提交日志 ：git log;
+
+查看提交结点的hash值： git log –pretty=oneline;
+
+查看文件内容 ： cat file_name;
+
+git reflog //记录了每一次命令；
+
+**HEAD**指向当前版本； git reset –hard commit_id //允许我们在各个版本之间穿梭；
 
 git commit 提交记录
 
@@ -62,9 +90,15 @@ git bisect //用于查找产生Bug的提交记录的指令。
 
 git describe <ref> //ref 可以是任何能被Git识别成提交记录的引用，如果没有指定，默认为 HEAD；
 
-##远程仓库
+## 远程仓库
 
-配置环境 git clone //在本地创建一个远程仓库的拷贝 
+**本地仓库**关联远程仓库：git remote add origin git@server-name:path/repo-name.git
+
+第一次提交本地仓库的内容: git push -u origin master
+
+git push origin master;//向远程仓库 origin 推送本地分支master；
+
+配置环境 git clone //**在本地创建一个远程仓库的拷贝** 
 
 **远程分支 - 在本地仓库中的**<remote name>/<branch name>
 
@@ -118,43 +152,6 @@ git push origin master
 
 *切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。*
 
-## 创建版本库
-
-mkdir + 文件名；新建一个文件夹
-
-cd + 文件名；打开一个文件夹
-
-pwd 显示当前目录
-
-git init 创建git仓库
-
-添加文件到git仓库：
-
-git add file;//添加文件到暂存区；
-
- git commit -m "message”;
-
-时刻掌握仓库当前状态： git status 
-
-查看上次修改的内容 ：git diff;//difference
-
-查看提交日志 ：git log;
-
-查看提交结点的hash值： git log –pretty=oneline;
-
-查看文件内容 ： cat file_name;
-
-git reflog //记录了每一次命令；
-
-**HEAD**指向当前版本； git reset –hard commit_id //允许我们在各个版本之间穿梭；
-
-## 远程仓库
-
-关联远程仓库：git remote add origin git@server-name:path/repo-name.git
-
-第一次提交本地仓库的内容: git push -u origin master
-
-git push origin master;//向远程仓库 origin 推送本地分支master；
 
 
 
